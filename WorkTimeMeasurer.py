@@ -12,7 +12,6 @@ Workfile = "C:/Users/micha/OneDrive/Dokumenty/WorkSheet.csv"
 
 import time
 import csv
-import datetime
 
 RowsThatWereAlreadyHere = []
       
@@ -27,10 +26,10 @@ def timediff(BeginTime, EndTime):
     return diff
 
 def FormatTheFile():
-    with open(Workfile ,'w', newline='' ) as f:
-        writer = csv.writer(f, delimiter=',')
+    with open(Workfile ,'w', newline='' ) as FormatFile:
+        FormatWriter = csv.writer(FormatFile, delimiter=',')
         CleanRow = (['LP', 'Data', 'Start', 'Koniec', 'W sumie godzin'])
-        writer.writerow(CleanRow)
+        FormatWriter.writerow(CleanRow)
         
 
 
@@ -98,4 +97,4 @@ with open(Workfile ,'w', newline='' ) as f:
     writer = csv.writer(f, delimiter=',')
     writer.writerows(RowsThatWereAlreadyHere)
 
-print(RowsThatWereAlreadyHere)
+#print(RowsThatWereAlreadyHere) #used for debugging
